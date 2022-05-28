@@ -2,23 +2,16 @@ namespace dio_rgp_oop.src.Entities
 {
     public class Wizard : Hero
     {
-        public Wizard(string Name, int Level, string HeroType)
+        public Wizard(string Name, int Level, string HeroType, int HP, int MP)
+            : base(Name, Level, HeroType, HP, MP){}
+            
+        public override string Attack()
         {
-            this.Name = Name;
-            this.Level = Level;
-            this.HeroType = HeroType;
+            return this.Name + " attacked with her magic, using the primary ability of Light Binding!";
         }
-
-        public override string Attack(){
-            return this.Name + " Lançou magia";
-        }    
-        public string Attack(int Bonus){
-                if (Bonus > 6){
-                    return this.Name + " Lançou magia super efetiva com bônus de " + Bonus;
-                    
-                }else{
-                    return this.Name + " Lançou uma magia com força fraca com bônus de " + Bonus;
-                }
-            }
+        public override string UltimateAbility()
+        {
+            return this.Name + " attacked with her magic, using the ultimate ability of Final Spark!";
+        }   
     }
 }
